@@ -19,8 +19,7 @@ class User{
             },
 
             vencedor: {
-                 type: database.db.Sequelize.BOOLEAN,
-                 defaultValue: true,
+                 type: database.db.Sequelize.STRING,
                   allowNull: false
             }
         })

@@ -4,10 +4,10 @@ import ControllerJogo from '../controller/jogo.js'
 const router = express.Router()
 
 router.get('/buscar', ControllerJogo.Buscar)
-router.get('/buscarum',  ControllerJogo.Buscarum)
+router.get('/buscarum/:id',  ControllerJogo.Buscarum)
 router.post('/criar', ControllerJogo.Criar)
-router.put('/alterar',  ControllerJogo.Altera)
-router.delete('/deletar',  ControllerJogo.Deletar)
+router.put('/alterar/:id',  ControllerJogo.Altera)
+router.delete('/deletar/:id',  ControllerJogo.Deletar)
 
 
 

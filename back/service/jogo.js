@@ -29,7 +29,7 @@ class ServiceUser {
         }
 
      
-        await RepositoryUser.Alterar(id, descricao, data, vencedor)
+        await RepositoryUser.Altera(id, descricao, data, vencedor)
     }
 
     async Deletar(id) {

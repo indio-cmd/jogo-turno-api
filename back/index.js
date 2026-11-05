@@ -8,7 +8,7 @@ app.use(express.json())
 app.use('/api/v1/jogo', routerJogo)
 
 database.db
-.sync({force: true})
+.sync({force: false})
 .then(() => {
     app.listen(3000, () => {
         console.log("Servidor rodando na porta 3000")

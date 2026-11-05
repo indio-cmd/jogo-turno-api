@@ -15,7 +15,7 @@ async Criar(descricao, data, vencedor){
 }
 
 async Altera(id, descricao, data, vencedor){
-  const jogo = await jogo.findByPk(id)
+  const jogo = await Jogo.findByPk(id)
 
 if(!jogo){
     throw new Error("Jogo não encontrado")
@@ -29,7 +29,7 @@ await jogo.save()
 }
 
 async Deletar(id){
- const jogo = await jogo.findByPk(id)
+ const jogo = await Jogo.findByPk(id)
 
  if(!jogo){
     throw new Error("Jogo não encontrado")
