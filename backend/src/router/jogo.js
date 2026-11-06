@@ -1,15 +1,15 @@
-//import express from "express"
-//import { atacar, curar, defender, status } from "../jogocontro/jogo.js"
-//
-//const router = express.Router()
-//router.get("/buscar/partida/criada/:id")
-//
-//router.get("/status", status )
-//
-//router.post("/jogada/atacar", atacar)
-//
-//router.post("/jogada/defender", defender)
-//
-//router.post("/jogada/curar", curar)
-//
-//export default router
+import express from "express"
+import jogo from "../controller/jogo.js"
+
+const router = express.Router()
+router.get("/buscar/partida/criada/:id")
+
+router.get("/status", jogo.status )
+
+router.post("/jogada/atacar", jogo.atacar)
+
+router.post("/jogada/defender", jogo.defender)
+
+router.post("/jogada/curar", jogo.curar)
+
+export default router

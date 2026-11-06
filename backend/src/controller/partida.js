@@ -3,13 +3,13 @@ import ServicePartida from "../service/partida.js"
 
 class controllerPartida {
 
-    async Buscar(_, req) {
+    async Buscar(res,_) {
         try {
 
             const partidas = await ServicePartida.Buscar()
 
             res.status(200).send({
-
+                mensage:"Aqui estão suas partidas",
                 partidas
 
             })
@@ -29,13 +29,14 @@ class controllerPartida {
     async Detalhe(req, res) {
         try {
 
-            const id = req.session.id
+            const id = req.params.id
+            
             const partida = await ServicePartida.Detalhe(id)
 
 
             res.status(200).send({
-
-              partida
+                mensage:"Aqui o resultado de sua busca",
+                partida
 
             })
 
@@ -53,15 +54,16 @@ class controllerPartida {
     }
 
     async Criar(req, res) {
+        
         try {
 
-            const { descricao, data, vencedor } = req.body
+            const  { descricao, data, vencedor }  = req.body
 
             await ServicePartida.Criar(descricao, data, vencedor)
 
             res.send(201).send({
 
-                message: "Partida criado com sucesso"
+                message: "Partida criada com sucesso"
 
             })
 
@@ -74,19 +76,17 @@ class controllerPartida {
             })
 
         }
-
-
     }
 
     async Alterar(req, res) {
 
         try {
 
-            const id = req.session.id
+            const id = req.params.id
 
             const { descricao, data, vencedor } = req.body
 
-            await ServicePartida.Altera(id,descricao, data, vencedor)
+            await ServicePartida.Alterar(id,descricao, data, vencedor)
 
             res.send(200).send({
 
@@ -102,15 +102,13 @@ class controllerPartida {
 
             })
         }
-
-
     }
 
     async Deletar(req, res) {
 
         try {
 
-            const id = req.session.id
+            const id = req.params.id
 
             await ServicePartida.Deletar(id)
 

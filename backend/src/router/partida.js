@@ -3,10 +3,14 @@ import controllerPartida from "../controller/partida.js"
 
 const router = express.Router()
 
-router.get('/buscar',controllerPartida.Buscar)
-router.get('/buscarum',controllerPartida.Detalhe)
-router.post('/criar',controllerPartida.Criar)
-router.put('/alterar',controllerPartida.Alterar)
-router.delete('/deletar',controllerPartida.Deletar)
+router.get('/Buscar',controllerPartida.Buscar)
+
+router.get('/Detalhe',controllerPartida.Detalhe)
+
+router.post('/Criar',controllerPartida.Criar)
+
+router.put('/Alterar',controllerPartida.Alterar)
+
+router.delete('/Deletar',controllerPartida.Deletar)
 
 export default router
