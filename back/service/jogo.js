@@ -1,9 +1,9 @@
-import RepositoryUser from '../repository/jogo.js'
+import RepositoryPartida from '../repository/jogo.js'
 
-class ServiceUser {
+class ServiceJogo {
 
     async Buscar() {
-        return RepositoryUser.Buscar()
+        return RepositoryPartida.Buscar()
     }
 
     async Buscarum(id) {
@@ -11,7 +11,7 @@ class ServiceUser {
             throw new Error("Favor informar o ID")
         }
 
-        return RepositoryUser.Buscarum(id)
+        return RepositoryPartida.Buscarum(id)
     }
 
     async Criar(descricao, data, vencedor) {
@@ -20,7 +20,7 @@ class ServiceUser {
         }
 
 
-        await RepositoryUser.Criar(descricao, data, vencedor)
+        await RepositoryPartida.Criar(descricao, data, vencedor)
     }
 
     async Altera(id, descricao, data, vencedor) {
@@ -29,7 +29,7 @@ class ServiceUser {
         }
 
      
-        await RepositoryUser.Altera(id, descricao, data, vencedor)
+        await RepositoryPartida.Altera(id, descricao, data, vencedor)
     }
 
     async Deletar(id) {
@@ -37,10 +37,10 @@ class ServiceUser {
             throw new Error("Favor informar o ID")
         }
 
-        await RepositoryUser.Deletar(id)
+        await RepositoryPartida.Deletar(id)
     }
 
 
 }
 
-export default new ServiceUser() 
+export default new ServiceJogo() 
