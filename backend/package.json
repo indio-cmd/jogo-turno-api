@@ -1,0 +1,26 @@
+{
+  "name": "jogo-turno-api",
+  "version": "1.0.0",
+  "description": "Sistema de operações ",
+  "homepage": "https://github.com/indio-cmd/jogo-turno-api#readme",
+  "bugs": {
+    "url": "https://github.com/indio-cmd/jogo-turno-api/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/indio-cmd/jogo-turno-api.git"
+  },
+  "license": "ISC",
+  "author": "Mateus Bohn dos Santos e Kaua com K",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "dev":"node --watch index.js",
+    "test": "modules"
+  },
+  "dependencies": {
+    "express": "^5.3.0",
+    "mysql2": "^3.24.6",
+    "sequelize": "^6.37.8"
+  }
+}
