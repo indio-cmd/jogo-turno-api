@@ -3,7 +3,7 @@ import ServicePartida from "../service/partida.js"
 
 class controllerPartida {
 
-    async Buscar(_, req) {
+    async Buscar(res, req) {
         try {
 
             const partidas = await ServicePartida.Buscar()
@@ -29,13 +29,13 @@ class controllerPartida {
     async Detalhe(req, res) {
         try {
 
-            const id = req.session.id
+            const id = req.params.id
             const partida = await ServicePartida.Detalhe(id)
 
 
             res.status(200).send({
 
-              partida
+                partida
 
             })
 
@@ -82,11 +82,11 @@ class controllerPartida {
 
         try {
 
-            const id = req.session.id
+            const id = req.params.id
 
             const { descricao, data, vencedor } = req.body
 
-            await ServicePartida.Altera(id,descricao, data, vencedor)
+            await ServicePartida.Altera(id, descricao, data, vencedor)
 
             res.send(200).send({
 
@@ -110,7 +110,7 @@ class controllerPartida {
 
         try {
 
-            const id = req.session.id
+            const id = req.params.id
 
             await ServicePartida.Deletar(id)
 
@@ -131,6 +131,6 @@ class controllerPartida {
 
     }
 }
-    
 
-    export default new controllerPartida
+
+export default new controllerPartida
