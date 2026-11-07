@@ -4,7 +4,7 @@ import database from "./src/config/database.js"
 
 
 import partida from "./src/router/partida.js"
-
+import jogo from "./src/router/jogo.js"
 
 
 const app = express()
@@ -15,7 +15,7 @@ app.use(express.json())
 
 
 app.use("/api/v1/partida" , partida)
-
+app.use("/api/v1/jogo",jogo)
 
 database.db.sync({force:false})
 

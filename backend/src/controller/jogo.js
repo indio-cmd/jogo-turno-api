@@ -1,50 +1,30 @@
 import servicejogo from "../service/jogo.js"
 
 
-class jogo{
+class cntrollerjogo {
 
-status (req,res){
-   try {
-    
-    const status = servicejogo.Status()
+    status(req, res) {
+        const status = servicejogo.status
+        res.send(status)
+    }
+    atacar(req, res) {
+        const atacar = servicejogo.atacar
+        res.send(atacar)
+    }
+    defender(req, res) {
+        const defender = servicejogo.defender
+        res.send(defender)
+    }
+    curar(req, res) {
+        const heal = servicejogo.curar
+        res.send(heal)
+    }
+    inimigoJoga(req, res) {
+        const vez = servicejogo.inimigoJoga
+        res.send(vez)
+    }
 
-    res.status(200).send({
-        status
-    })
-
-   } catch (error) {
-    res.status(404).send({
-        mensage: error
-    })
-   }
 
 }
 
-atacar (req, res){
-    
-// inimigo.hp = inimigo.hp - campeao.ataque 
-
-// if(inimigo.hp <=0){
-//     inimigo.hp = 0
-
-
-const resultado = campeao, inimigo
-
-
-    return res.json({mensagem: "Voce venceu",
-        campeao:campeao.hp,
-        inimigo:inimigo.hp
-    })
-}
-
-}
-defender (){
-    
-}
-curar(){
-    
-}
-    
-}
-
-export default new jogo
+export default new cntrollerjogo
